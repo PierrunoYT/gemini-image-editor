@@ -2,7 +2,6 @@
 
 A powerful web-based tool that uses Google's Gemini AI to transform your images with various effects, filters, and creative edits - all through a simple user interface.
 
-![Gemini Image Editor](https://i.imgur.com/example.jpg)
 
 ## 🌟 Features
 
