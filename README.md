@@ -1,136 +1,136 @@
 # Gemini Image Editing Tools
 
-Diese Sammlung von Python-Skripten ermöglicht die Bearbeitung von Bildern mit der Google Gemini API und Imagen 3. Mit diesen Tools können Sie Bilder in verschiedene Stile umwandeln, Objekte hinzufügen, Hintergründe ändern und vieles mehr - alles mit der Kraft der KI.
+This collection of Python scripts enables editing images with the Google Gemini API and Imagen 3. With these tools, you can transform images into various styles, add objects, change backgrounds, and much more - all with the power of AI.
 
-![Beispiel Bildbearbeitung](https://i.imgur.com/example.jpg)
+![Example Image Editing](https://i.imgur.com/example.jpg)
 
-## Voraussetzungen
+## Requirements
 
-1. Python 3.7 oder höher
-2. Ein Google Gemini API-Schlüssel (erhältlich über [Google AI Studio](https://aistudio.google.com))
-3. Die folgenden Python-Pakete:
+1. Python 3.7 or higher
+2. A Google Gemini API key (available via [Google AI Studio](https://aistudio.google.com))
+3. The following Python packages:
    ```bash
    pip install google-generativeai pillow python-dotenv gradio
    ```
 
-## Einrichtung
+## Setup
 
-1. Klonen Sie dieses Repository oder laden Sie die Dateien herunter
+1. Clone this repository or download the files
 
-2. Erstellen Sie eine `.env`-Datei im Projektverzeichnis mit Ihrem API-Schlüssel:
+2. Create a `.env` file in the project directory with your API key:
    ```
-   GEMINI_API_KEY=Ihr_API_Schlüssel_hier
+   GEMINI_API_KEY=your_api_key_here
    ```
 
-3. Stellen Sie sicher, dass Sie ein Eingabebild haben, das Sie bearbeiten möchten (z.B. `input_image.jpg`)
+3. Make sure you have an input image that you want to edit (e.g. `input_image.jpg`)
 
-## Verfügbare Skripte
+## Available Scripts
 
-### 1. gemini_webui.py (Empfohlen)
+### 1. gemini_webui.py (Recommended)
 
-Web-Benutzeroberfläche für die einfache Bearbeitung von Bildern mit vordefiniertem oder benutzerdefiniertem Prompt. Bietet die benutzerfreundlichste Erfahrung.
+Web user interface for easy image editing with predefined or custom prompts. Provides the most user-friendly experience.
 
 ```bash
 python gemini_webui.py
 ```
 
-Dieses Skript:
-- Startet eine Web-Benutzeroberfläche auf http://localhost:7860
-- Ermöglicht das Hochladen von Bildern per Drag & Drop
-- Bietet eine Auswahl vordefinierter Stile
-- Ermöglicht benutzerdefinierte Prompts für kreative Bearbeitungen
-- Zeigt Original, bearbeitetes Bild und Gemini-Antwort nebeneinander an
+This script:
+- Launches a web interface at http://localhost:7860
+- Allows uploading images via drag & drop
+- Offers a selection of predefined styles
+- Enables custom prompts for creative edits
+- Shows original image, edited image, and Gemini's response side by side
 
 ### 2. gemini_image_editor.py
 
-Einfaches Skript zum Bearbeiten eines Bildes mit einem vordefinierten Prompt. Ideal für den Einstieg in die Kommandozeile.
+Simple script for editing an image with a predefined prompt. Ideal for getting started with the command line.
 
 ```bash
 python gemini_image_editor.py
 ```
 
-Dieses Skript:
-- Lädt ein Bild aus dem angegebenen Pfad (`input_image.jpg`)
-- Wandelt es in einen Ölgemälde-Stil um
-- Zeigt sowohl das Original als auch das bearbeitete Bild an
-- Speichert das Ergebnis als `edited_image.jpg`
+This script:
+- Loads an image from the specified path (`input_image.jpg`)
+- Transforms it into an oil painting style
+- Shows both the original and edited image
+- Saves the result as `edited_image.jpg`
 
 ### 3. gemini_advanced_image_editor.py
 
-Fortgeschrittenes Skript mit mehreren Bearbeitungsoptionen und Kommandozeilenargumenten. Bietet maximale Flexibilität für Kommandozeilennutzer.
+Advanced script with multiple editing options and command-line arguments. Provides maximum flexibility for command-line users.
 
 ```bash
-# Grundlegende Verwendung
-python gemini_advanced_image_editor.py pfad/zum/bild.jpg
+# Basic usage
+python gemini_advanced_image_editor.py path/to/image.jpg
 
-# Mit spezifischem Stil
-python gemini_advanced_image_editor.py pfad/zum/bild.jpg --style cartoon
+# With specific style
+python gemini_advanced_image_editor.py path/to/image.jpg --style cartoon
 
-# Mit benutzerdefiniertem Prompt
-python gemini_advanced_image_editor.py pfad/zum/bild.jpg --custom "Füge einen Dinosaurier zum Bild hinzu"
+# With custom prompt
+python gemini_advanced_image_editor.py path/to/image.jpg --custom "Add a dinosaur to the image"
 
-# Bilder anzeigen und in eine bestimmte Datei speichern
-python gemini_advanced_image_editor.py pfad/zum/bild.jpg --show --output ergebnis.jpg
+# Show images and save to a specific file
+python gemini_advanced_image_editor.py path/to/image.jpg --show --output result.jpg
 ```
 
-#### Verfügbare Stile:
+#### Available Styles:
 
-| Stil | Beschreibung |
+| Style | Description |
 |------|-------------|
-| none | Nur benutzerdefinierter Prompt |
-| cartoon | Cartoon-Stil |
-| oil | Ölgemälde-Stil |
-| sketch | Bleistiftskizze |
-| vintage | Vintage-Filter |
-| cyberpunk | Cyberpunk-Stil |
-| watercolor | Aquarellgemälde |
-| neon | Neon-Effekte |
-| add_object | Fügt ein Objekt hinzu |
-| background | Ändert den Hintergrund |
-| enhance | Verbessert die Bildqualität (Standard) |
+| none | Custom prompt only |
+| cartoon | Cartoon style |
+| oil | Oil painting style |
+| sketch | Pencil sketch |
+| vintage | Vintage filter |
+| cyberpunk | Cyberpunk style |
+| watercolor | Watercolor painting |
+| neon | Neon effects |
+| add_object | Adds an object |
+| background | Changes the background |
+| enhance | Improves image quality (Default) |
 
-### 4. imagen_editor.py (Geplant)
+### 4. imagen_editor.py (Planned)
 
-Verwendet die Imagen 3 API für fortgeschrittene Bildbearbeitung.
+Uses the Imagen 3 API for advanced image editing.
 
 ```bash
 python imagen_editor.py
 ```
 
-## Technische Details
+## Technical Details
 
-- **API-Modell**: Die Skripte verwenden das `gemini-2.0-flash-exp-image-generation`-Modell
-- **Bildformate**: Unterstützt gängige Formate wie JPG, PNG, etc. (via PIL/Pillow)
-- **Fehlerbehandlung**: Robuste Fehlerbehandlung für fehlende Dateien und API-Probleme
+- **API Model**: The scripts use the `gemini-2.0-flash-exp-image-generation` model
+- **Image Formats**: Supports common formats like JPG, PNG, etc. (via PIL/Pillow)
+- **Error Handling**: Robust error handling for missing files and API issues
 
-## Hinweise
+## Notes
 
-- Die Imagen 3 API ist nur im kostenpflichtigen Tarif verfügbar
-- Gemini 2.0 Flash Experimental unterstützt die Bildbearbeitung im kostenlosen Tarif
-- Alle generierten Bilder enthalten eine digitale Wassermarke
-- Die Qualität der Ergebnisse hängt stark von der Klarheit des Prompts ab
+- The Imagen 3 API is only available in the paid tier
+- Gemini 2.0 Flash Experimental supports image editing in the free tier
+- All generated images contain a digital watermark
+- The quality of results depends heavily on the clarity of the prompt
 
-## Beispiele für Bearbeitungsprompts
+## Examples of Editing Prompts
 
-- "Wandle dieses Bild in einen Cartoon-Stil um"
-- "Füge einen Regenbogen zum Himmel hinzu"
-- "Ändere die Jahreszeit zu Winter mit Schnee"
-- "Füge einen Hund im Vordergrund hinzu"
-- "Mache das Bild wie eine alte Fotografie aussehen"
-- "Verwandle die Szene in eine Nachtszenerie"
-- "Füge einen dramatischen Sonnenuntergang hinzu"
-- "Verwandle das Bild in einen Science-Fiction-Film-Stil"
+- "Transform this image into a cartoon style"
+- "Add a rainbow to the sky"
+- "Change the season to winter with snow"
+- "Add a dog in the foreground"
+- "Make the image look like an old photograph"
+- "Transform the scene into a night scene"
+- "Add a dramatic sunset"
+- "Transform the image into a science fiction movie style"
 
-## Fehlerbehebung
+## Troubleshooting
 
-- **API-Schlüssel-Fehler**: Stellen Sie sicher, dass Ihre `.env`-Datei korrekt eingerichtet ist
-- **Bildprobleme**: Überprüfen Sie, ob das Eingabebild existiert und in einem unterstützten Format vorliegt
-- **Modellbeschränkungen**: Beachten Sie, dass das Modell bestimmte Einschränkungen bei der Bildgröße haben kann
+- **API Key Errors**: Ensure your `.env` file is correctly set up
+- **Image Issues**: Check if the input image exists and is in a supported format
+- **Model Limitations**: Note that the model may have certain limitations on image size
 
-## Lizenz
+## License
 
 MIT
 
 ---
 
-*Erstellt mit ❤️ für Bildbearbeitungs-Enthusiasten*
+*Created with ❤️ for image editing enthusiasts*
